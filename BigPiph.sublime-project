@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		}
+	],
+  "build-system":
+  [
+    {
+      "name": "Default",
+      "shell_cmd": "ls"
+    }
+  ]
+
+}

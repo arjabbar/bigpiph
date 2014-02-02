@@ -23,6 +23,7 @@ html {
 }
 body {
     position: absolute;
+    background-image: url(../img/epiphany.png), url(../img/crowd.png), -webkit-linear-gradient(left, rgba(0,0,0,0.8), transparent);
     background-image: url(../img/epiphany.png), url(../img/crowd.png), linear-gradient(to right, rgba(0,0,0,0.8), transparent);
     background-position: right top;
     background-repeat: no-repeat;
@@ -41,6 +42,7 @@ body {
     line-height: 1.2;
     width: 75%;
     color: white;
+    transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
 }
 
@@ -89,6 +91,11 @@ body {
 .red:hover {
     border-color: rgb(230,0,0);
     color: rgba(0,0,0,0.7);
+}
+
+.inner-wrap {
+    bottom: 0; top: 0; left: 0; right: 0;
+    position: absolute;
 }
 
 *::-webkit-input-placeholder {

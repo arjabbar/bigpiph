@@ -10,7 +10,7 @@
   [
     {
       "name": "Default",
-      "shell_cmd": "ls"
+      "shell_cmd": "ruby $project_path/build.rb"
     }
   ]
 

@@ -1,2 +1,2 @@
 $(document).ready ->
-  $(this).foundation();
+  $(document).foundation();

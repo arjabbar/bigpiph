@@ -93,9 +93,74 @@ body {
     color: rgba(0,0,0,0.7);
 }
 
+.front-page-container {
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+}
+
+.off-canvas-wrap.move-right .front-page-container {
+
+}
+
 .inner-wrap {
-    bottom: 0; top: 0; left: 0; right: 0;
-    position: absolute;
+    height: 100%;
+}
+
+.menu-line {
+    width: 100%;
+    background-color: white;
+    margin: 10px 0;
+    height: 10px;
+}
+
+.left-off-canvas-toggle {
+    width: 5em;
+    height: 4em;
+    position:fixed !important;
+    top: 15px;
+    left: 10px;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.left-off-canvas-menu {
+    height: 1000%;
+    position: fixed;
+    -webkit-box-shadow: inset -3px 0 40px black;
+    -moz-box-shadow: inset -3px 0 40px black;
+    box-shadow: inset -3px 0 40px black;
+}
+
+.left-off-canvas-menu ul {
+    width: 100%;
+}
+
+.left-off-canvas-menu li {
+    list-style-type: none;
+    list-style-image: none;
+    position: relative;
+    width: 100%;
+}
+
+.left-off-canvas-menu a {
+    width: 100%;
+    height: 3em;
+    font-size: 1.5em;
+    display: block;
+    color: white;
+    -webkit-transition: color 150ms;
+    -moz-transition: color 150ms;
+    -ms-transition: color 150ms;
+    -o-transition: color 150ms;
+    transition: color 150ms;
+}
+
+.left-off-canvas-menu a:hover {
+    color: red;
 }
 
 *::-webkit-input-placeholder {

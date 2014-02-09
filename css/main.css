@@ -33,6 +33,33 @@ body {
     top: 0; bottom: 0; right: 0; left: 0;
 }
 
+.front-page-container {
+    opacity: 0;
+    transition: all 250ms;
+}
+
+.front-page-container.active {
+    opacity: 1;
+    margin-bottom: 0;
+}
+
+.footer-container {
+    background-color: black;
+    height: 50%;
+    width: 100%;
+    opacity: 0;
+    transition: all 500ms;
+    bottom: 0;
+    z-index: -1;
+    position: absolute;
+}
+
+.footer-container.active {
+    z-index: 1;
+    height: 100%;
+    opacity: 1;
+}
+
 .main-quote {
     position: relative;
     text-align: center;
@@ -163,6 +190,32 @@ body {
 
 .left-off-canvas-menu a:hover {
     color: red;
+}
+
+.show-video-button, .hide-video-button {
+    background-image: url(../img/arrow.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    cursor: pointer;
+}
+
+.show-video-button {
+    bottom: 20px;
+}
+
+.hide-video-button {
+    top: 20px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 *::-webkit-input-placeholder {

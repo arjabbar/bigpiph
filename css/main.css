@@ -181,6 +181,11 @@ body {
     color: rgba(255,255,255,0.6);
 }
 
+::selection {
+    background-color: black;
+    color: red;
+}
+
 @media screen and (max-width: 980px) {
 
     html {

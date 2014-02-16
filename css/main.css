@@ -59,14 +59,25 @@ body:after {
     height: 100%;
     z-index: -1;
     background: url(../img/epiphany2.png);
-    -webkit-background-size: cover;
-    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-size: 80%;
+    background-size: 80%;
+    background-position: right top 10%;
 }
 
-@media screen and (max-width: 1080px)  {
+@media screen and (max-width: 960px)  {
     body:before {
         content: '';
         background: none;
+    }
+
+    body:after {
+        -webkit-background-size: 150%;
+        background-size: 150%;
+    }
+
+    .newsletter-signup {
+        text-align: center;
     }
 }
 

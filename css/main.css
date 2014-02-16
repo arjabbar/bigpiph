@@ -23,14 +23,51 @@ html {
 }
 body {
     position: absolute;
-    background-image: url(../img/epiphany2.png), url(../img/crowd.png), -webkit-linear-gradient(left, rgba(0,0,0,0.8), transparent);
-    background-image: url(../img/epiphany2.png), url(../img/crowd.png), linear-gradient(to right, rgba(0,0,0,0.8), transparent);
-    background-position: right top, bottom;
-    background-repeat: no-repeat;
-    background-size: auto, cover;
     font-size: 1em;
     line-height: 1.4;
     top: 0; bottom: 0; right: 0; left: 0;
+    background: -webkit-gradient(linear, 0 0, 100% 100%, from(rgba(0,0,0,0.5)), to(transparent));
+    background: -webkit-linear-gradient(top left, rgba(0,0,0,0.5), transparent);
+    background: -moz-linear-gradient(top left, rgba(0,0,0,0.5), transparent);
+    background: -o-linear-gradient(top left, rgba(0,0,0,0.5), transparent);
+    background: linear-gradient(top left, rgba(0,0,0,0.5), transparent);
+}
+
+body:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url(../img/crowd.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+body:after {
+    content: '';
+    position: absolute;
+    text-align: right;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url(../img/epiphany2.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+@media screen and (max-width: 1080px)  {
+    body:before {
+        content: '';
+        background: none;
+    }
 }
 
 .front-page-container {
@@ -327,9 +364,6 @@ body {
 
 @media screen and (max-width: 1080px) {
 
-    html {
-        background-size: auto;
-    }
     .main-quote {
         top: 40%;
         font-size: 1.5em;

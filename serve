@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require 'webrick'
+
+include WEBrick
+
+server = HTTPServer.new DocumentRoot: '.', Port: 2000
+Thread.new do
+  server.start
+end

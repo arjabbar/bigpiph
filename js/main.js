@@ -2,9 +2,12 @@
 (function() {
   $(document).ready(function() {
     $(document).foundation();
-    return $('.show-video-button, .hide-video-button').on('click', function() {
+    $('.show-video-button, .hide-video-button').on('click', function() {
       $('.front-page-container').toggleClass('active');
       return $('.footer-container').toggleClass('active');
+    });
+    return $(this).on('touchmove', 'html, body', function(e) {
+      return e.preventDefault();
     });
   });
 

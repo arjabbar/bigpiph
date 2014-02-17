@@ -378,6 +378,29 @@ body:after {
 
     .main-quote {
         top: 40%;
-        font-size: 1.5em;
+        font-size: 1.1em;
+    }
+
+    .newsletter-signup {
+        top: auto;
+        font-size: 1em;
+        padding-top: 35%;
+    }
+
+    .logo {
+        max-width: 25%;
+        max-height: 100px;
+        display: block;
+        margin: 20% auto 40px;
+    }
+
+    .social-icons svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    #youtube-video {
+        width: 100%;
+        height: 50%;
     }
 }

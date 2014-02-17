@@ -4,4 +4,4 @@ $(document).ready ->
     $('.front-page-container').toggleClass 'active'
     $('.footer-container').toggleClass 'active'
 
-  $(this).on('touchstart touchmove scroll', 'html, body', (e)-> e.preventDefault();)
+  $(this).on('touchmove scroll', 'html, body', (e)-> e.preventDefault();)

@@ -1,6 +1,6 @@
 $(document).ready ->
 
-  SLIDE_DOWN_THRESHOLD = 100
+  SLIDE_DOWN_THRESHOLD = 10
   log = (msg)-> console.log(msg)
 
   $(document).foundation();

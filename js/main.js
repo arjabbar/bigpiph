@@ -2,7 +2,7 @@
 (function() {
   $(document).ready(function() {
     var $footer, SLIDE_DOWN_THRESHOLD, distanceMoved, dragging, fingerY, log, mouseY, moveDown, pastDragThreshold, resetBottomPage, resetDragValues, showTopPage;
-    SLIDE_DOWN_THRESHOLD = 100;
+    SLIDE_DOWN_THRESHOLD = 10;
     log = function(msg) {
       return console.log(msg);
     };

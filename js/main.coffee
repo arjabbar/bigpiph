@@ -1,6 +1,6 @@
 $(document).ready ->
 
-  SLIDE_DOWN_THRESHOLD = window.screen.height / 2
+  SLIDE_DOWN_THRESHOLD = window.screen.height / 4
   log = (msg)-> console.log(msg)
 
   $(document).foundation();
@@ -21,6 +21,9 @@ $(document).ready ->
   showTopPage = ->
     $('.hide-video-button').trigger('click')
     $footer.removeAttr('style')
+    setTimeout -> 
+      $footer.removeAttr('style')
+      , 1000
     resetDragValues()
 
   resetBottomPage = ->

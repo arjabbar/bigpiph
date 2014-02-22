@@ -1,29 +1,23 @@
 $(document).ready (e) ->
-  quotesAnimation = (localStorage or {}).quotesAnimation or "fadeInUp"
-  $(".main-quote [class*=line]").each (index, elem) ->
-    setTimeout (->
-      $(elem).addClass quotesAnimation + " animated"
-      return
-    ), index * 250
-    return
+  snap = Snap('.show-video-button')
 
-  fillWithSVG = (element) ->
-    $elem = $(element)
-    $elem.css "position", "relative"
-    snap = new Snap($elem.width(), $elem.height())
-    snap.attr
-      position: "absolute"
-      top: 0
-      left: 0
+  width = parseInt snap.attr('width')
+  height = parseInt snap.attr('height')
 
-    $elem.append snap.node
-    snap
+  arrow = (snap, width, height, arrowWidth = 5) ->
+    halfPoint = (width / 2)
+    snap.polyline 0, 0,
+      halfPoint, height, 
+      width, 0, 
+      halfPoint, height - arrowWidth,
+      0, 0
 
-  $("a.red").each (index, elem) ->
-    snap = fillWithSVG(elem)
-    return
+  arrow(snap, width, height)
 
-  return
+  snap2 = Snap(".hide-video-button")
 
+  downArrow = arrow(snap2, width, height)
 
-# rect = snap.rect(0, 0, '100%', '100%');
+  $(downArrow.node).css
+    transform: 'rotate(180deg)'
+    'transform-origin': 'center'

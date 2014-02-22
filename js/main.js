@@ -7,7 +7,8 @@
       return $('.footer-container').toggleClass('active');
     });
     return $(this).on('touchmove scroll', 'html, body', function(e) {
-      return e.preventDefault();
+      e.preventDefault();
+      return window.scollTo(0, 0);
     });
   });
 

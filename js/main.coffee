@@ -5,5 +5,3 @@ $(document).ready ->
     $('.footer-container').toggleClass 'active'
 
   $(this).on('touchmove scroll', 'html, body', (e)-> e.preventDefault(); window.scollTo( 0, 0))
-
-  window.setInterval(-> window.scrollTo(0,0), 100)

@@ -1,3 +1,4 @@
+# Hide and Show video Arrows
 $(document).ready (e) ->
   snap = Snap('.show-video-button')
 
@@ -21,3 +22,12 @@ $(document).ready (e) ->
   $(downArrow.node).css
     transform: 'rotate(180deg)'
     'transform-origin': 'center'
+
+# Main quote slide in effect
+$(document).ready (e) ->
+  delayBetweenEntrances = 200
+  $('.main-quote [class*=line], .newsletter-signup')
+    .css
+      'margin-top': '0'
+      opacity: 1
+      transform: 'scale(1)'

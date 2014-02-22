@@ -22,4 +22,14 @@
     });
   });
 
+  $(document).ready(function(e) {
+    var delayBetweenEntrances;
+    delayBetweenEntrances = 200;
+    return $('.main-quote [class*=line], .newsletter-signup').css({
+      'margin-top': '0',
+      opacity: 1,
+      transform: 'scale(1)'
+    });
+  });
+
 }).call(this);

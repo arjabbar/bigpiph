@@ -23,7 +23,7 @@ $(document).ready ->
     $footer.removeAttr('style')
     setTimeout -> 
       $footer.removeAttr('style')
-      , 1000
+    , 1000
     resetDragValues()
 
   resetBottomPage = ->

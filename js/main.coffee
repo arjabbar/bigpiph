@@ -1,6 +1,6 @@
 $(document).ready ->
 
-  SLIDE_DOWN_THRESHOLD = window.screen.height / 10
+  SLIDE_DOWN_THRESHOLD = 100
   log = (msg)-> console.log(msg)
 
   $(document).foundation();

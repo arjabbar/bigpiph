@@ -2,7 +2,7 @@
 (function() {
   $(document).ready(function() {
     var $footer, SLIDE_DOWN_THRESHOLD, distanceMoved, dragging, fingerY, log, mouseY, moveDown, pastDragThreshold, resetBottomPage, resetDragValues, showTopPage;
-    SLIDE_DOWN_THRESHOLD = window.screen.height / 4;
+    SLIDE_DOWN_THRESHOLD = window.screen.height / 10;
     log = function(msg) {
       return console.log(msg);
     };
@@ -23,7 +23,7 @@
       $footer.removeAttr('style');
       setTimeout(function() {
         return $footer.removeAttr('style');
-      }, 1000);
+      }, 250);
       return resetDragValues();
     };
     resetBottomPage = function() {

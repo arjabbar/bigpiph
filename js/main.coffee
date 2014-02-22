@@ -1,6 +1,6 @@
 $(document).ready ->
 
-  SLIDE_DOWN_THRESHOLD = window.screen.height / 4
+  SLIDE_DOWN_THRESHOLD = window.screen.height / 10
   log = (msg)-> console.log(msg)
 
   $(document).foundation();
@@ -23,7 +23,7 @@ $(document).ready ->
     $footer.removeAttr('style')
     setTimeout -> 
       $footer.removeAttr('style')
-    , 1000
+    , 250
     resetDragValues()
 
   resetBottomPage = ->

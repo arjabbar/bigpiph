@@ -20,10 +20,11 @@
     };
     showTopPage = function() {
       $('.hide-video-button').trigger('click');
+      $footer.removeAttr('style');
       return resetDragValues();
     };
     resetBottomPage = function() {
-      $footer.css('top', '');
+      $footer.removeAttr('style');
       return resetDragValues();
     };
     pastDragThreshold = function() {
@@ -52,6 +53,7 @@
         return resetBottomPage();
       }
     });
+    $(this).on('scroll', showTopPage);
     mouseY = null;
     dragging = false;
     $(this).on('mousedown', '.footer-container', function(e) {

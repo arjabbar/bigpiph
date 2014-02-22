@@ -46,7 +46,7 @@ body:before {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background: url(../img/crowd.png);
-    background-position: 0 10%;
+    background-position: 0 8%;
     background-size: cover;
 }
 body:after {
@@ -102,7 +102,6 @@ body:after {
     font-size: 2em;
     margin: auto;
     line-height: 1.2;
-    width: 75%;
     color: white;
 }
 .main-quote [class*=line], .newsletter-signup {
@@ -335,7 +334,7 @@ body:after {
     background-color: black;
     color: red;
 }
-::selection {
+*::selection {
     background-color: black;
     color: red;
 }
@@ -403,6 +402,6 @@ body:after {
         height: 2em;
     }
     .front-page-container {
-        font-size: 0.8em;
+        font-size: 1.8em;
     }
 }

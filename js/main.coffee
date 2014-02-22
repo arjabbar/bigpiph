@@ -14,17 +14,17 @@ $(document).ready ->
   fingerY = null
   distanceMoved = 0
 
-
   moveDown = (distance) ->
     $footer.css 'top', "+#{distance}px"
     distanceMoved += distance
 
   showTopPage = ->
     $('.hide-video-button').trigger('click')
+    $footer.removeAttr('style')
     resetDragValues()
 
   resetBottomPage = ->
-    $footer.css 'top', ''
+    $footer.removeAttr('style')
     resetDragValues()
 
   pastDragThreshold = ->
@@ -45,6 +45,8 @@ $(document).ready ->
       showTopPage()
     else
       resetBottomPage()
+
+  $(@).on 'scroll', showTopPage
 
   # Mouse drag touch events
 

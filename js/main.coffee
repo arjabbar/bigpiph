@@ -1,6 +1,6 @@
 $(document).ready ->
 
-  SLIDE_DOWN_THRESHOLD = 10
+  SLIDE_DOWN_THRESHOLD = window.screen.height / 10
   log = (msg)-> console.log(msg)
 
   $(document).foundation();
@@ -50,6 +50,8 @@ $(document).ready ->
       resetBottomPage()
 
   $(@).on 'scroll', showTopPage
+
+  $(@).on 'click', '.logo', showTopPage
 
   # Mouse drag touch events
 

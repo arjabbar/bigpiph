@@ -33,47 +33,10 @@ $(document).ready ->
   pastDragThreshold = ->
     distanceMoved > SLIDE_DOWN_THRESHOLD
 
-  $(@).on 'touchstart', '.footer-container', (e)-> 
-    firstFingerDown = e.originalEvent.changedTouches[0]
-    fingerY = firstFingerDown.screenY
+  Hammer($footer[0]).on 'swipedown', (e)-> 
+    showTopPage()
 
-  $(@).on 'touchmove', '.footer-container', (e)-> 
-    fingerDown = e.originalEvent.touches[0]
-    distance = Math.abs(fingerDown.screenY - fingerY)
-    moveDown(distance) if fingerY and fingerDown.screenY > fingerY
-    $(@).trigger('touchend') if pastDragThreshold()
-
-  $(@).on 'touchend', '.footer-container', (e)->
-    if pastDragThreshold()
-      showTopPage()
-    else
-      resetBottomPage()
-
-  $(@).on 'scroll', showTopPage
-
-  $(@).on 'click', '.logo', showTopPage
-
-  # Mouse drag touch events
-
-  mouseY = null
-  dragging = false
-
-  $(@).on 'mousedown', '.footer-container', (e)->
-    mouseY = e.clientY
-    dragging = true
-
-  $(@).on 'mousemove', '.footer-container', (e)->
-    return unless dragging
-    distance = Math.abs(e.clientY - mouseY)
-    moveDown(distance) if mouseY and e.clientY > mouseY
-    $(@).trigger('mouseup') if pastDragThreshold()
-
-  $(@).on 'mouseup', '.footer-container', (e)->
-    dragging = false
-    if pastDragThreshold()
-      showTopPage()
-    else
-      resetBottomPage()
+  $('.logo').on 'click', showTopPage
 
   resetDragValues = ->
     fingerY = null

@@ -1,44 +1,41 @@
 $(document).ready ->
 
-  SLIDE_DOWN_THRESHOLD = window.screen.height / 10
-  log = (msg)-> console.log(msg)
-
   $(document).foundation();
+  
+  screen = window.screen
+  height = window.innerHeight
+  width = window.innerWidth
+
+  $('.front-page-container, .footer-container')
+    .height(height)
+    .width(width)
+
+  SHOW_VIDEO_BUTTON_MARGIN = 20
+  $showVideoButton = $ '.show-video-button'
+  $hideVideoButton = $ '.hide-video-button'
+
+  $showVideoButton.css('top', "#{(height - $showVideoButton.height()) - SHOW_VIDEO_BUTTON_MARGIN}px")
 
   $footer = $('.footer-container')
 
-  $('.show-video-button, .hide-video-button').on 'click', ->
-    $('.front-page-container').toggleClass 'active'
-    $footer.toggleClass 'active'
+  window.scrollToTop = $.smoothScroll.bind(window, scrollTarget: $('.front-page-container'))
 
-  fingerY = null
-  distanceMoved = 0
+  $('.show-video-button').on 'click touchdown', (e) ->
+    $.smoothScroll scrollTarget: $('.footer-container')
 
-  moveDown = (distance) ->
-    $footer.css 'top', "+#{distance}px"
-    distanceMoved += distance
+  $('.hide-video-button, .left-off-canvas-toggle').on 'click touchdown', (e) ->
+    $.smoothScroll scrollTarget: $('front-page-container')
 
-  showTopPage = ->
-    $('.hide-video-button').trigger('click')
-    $footer.removeAttr('style')
-    setTimeout -> 
-      $footer.removeAttr('style')
-    , 250
-    resetDragValues()
+  $('.logo').on 'click', scrollToTop
 
-  resetBottomPage = ->
-    $footer.removeAttr('style')
-    resetDragValues()
+  $(@).on 'scroll', (e) ->
+    if window.scrollY > (height / 2) 
+      $('.footer-container').addClass 'active'
+      $('.front-page-container').removeClass 'active'
+    else
+      $('.footer-container').removeClass 'active'
+      $('.front-page-container').addClass 'active'
 
-  pastDragThreshold = ->
-    distanceMoved > SLIDE_DOWN_THRESHOLD
-
-  Hammer($footer[0]).on 'swipedown', (e)-> 
-    showTopPage()
-
-  $('.logo').on 'click', showTopPage
-
-  resetDragValues = ->
-    fingerY = null
-    distanceMoved = 0
-    mouseY = 0
+  window.setTimeout ->
+    $('body').css('opacity', 1).css('display', 'initial')
+  , 1500

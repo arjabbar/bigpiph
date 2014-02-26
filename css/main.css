@@ -79,7 +79,7 @@ body {
     opacity: 1;
     margin-bottom: 0;
 }
-.front-page-container > * {
+.front-page-container > :first-child {
     position: relative;
     top: 15%;
 }

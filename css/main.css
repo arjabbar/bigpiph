@@ -79,6 +79,10 @@ body {
     opacity: 1;
     margin-bottom: 0;
 }
+.front-page-container > * {
+    position: relative;
+    top: 15%;
+}
 .footer-container {
     vertical-align: middle;
     position: relative;

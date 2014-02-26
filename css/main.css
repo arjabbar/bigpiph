@@ -18,7 +18,8 @@ html, body {
     transition: opacity 500ms;
     min-height: 500px;
     margin: 0;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 html {
     background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(200, 200, 200, 0.8))), color-stop(1, transparent));

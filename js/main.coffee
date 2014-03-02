@@ -38,4 +38,9 @@ $(document).ready ->
 
   window.setTimeout ->
     $('body').css('opacity', 1).css('display', 'initial')
-  , 1500
+  , 500
+
+  $('.inner-wrap').on 'transitionend otransitionend webkitTransitionEnd oTransitionEnd', (e) ->
+    if $(e.target).hasClass('inner-wrap out')
+      $('.newsletter-signup input').focus()
+    $(e.target).toggleClass('out') if $(e.target).hasClass('inner-wrap')

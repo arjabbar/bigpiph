@@ -35,9 +35,17 @@
         return $('.front-page-container').addClass('active');
       }
     });
-    return window.setTimeout(function() {
+    window.setTimeout(function() {
       return $('body').css('opacity', 1).css('display', 'initial');
-    }, 1500);
+    }, 500);
+    return $('.inner-wrap').on('transitionend otransitionend webkitTransitionEnd oTransitionEnd', function(e) {
+      if ($(e.target).hasClass('inner-wrap out')) {
+        $('.newsletter-signup input').focus();
+      }
+      if ($(e.target).hasClass('inner-wrap')) {
+        return $(e.target).toggleClass('out');
+      }
+    });
   });
 
 }).call(this);

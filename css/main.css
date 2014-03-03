@@ -38,6 +38,7 @@ body {
     background: -webkit-gradient(linear, 0 0, 100% 100%, from(rgba(0, 0, 0, 0.5)), to(transparent));
     background: -webkit-linear-gradient(top left, rgba(0, 0, 0, 0.5), transparent);
     background: linear-gradient(top left, rgba(0, 0, 0, 0.5), transparent);
+    background: #AAAAAA;
 }
 .front-page-container:before {
     content:'';
@@ -279,7 +280,6 @@ body {
     transform: scale(1);
 }
 .video-section {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 .video-section iframe {
     margin: auto;

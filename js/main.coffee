@@ -44,3 +44,19 @@ $(document).ready ->
     if $(e.target).hasClass('inner-wrap out')
       $('.newsletter-signup input').focus()
     $(e.target).toggleClass('out') if $(e.target).hasClass('inner-wrap')
+
+  $("#mc-embedded-subscribe-form").on 'keydown', (e) ->
+    if e.keyCode == 13
+      $(@).submit()
+
+  $("#mc-embedded-subscribe-form").submit ->
+    url = $(@).attr 'action'
+    $.ajax
+      type: "POST"
+      url: url
+      data: $(@).serialize()
+      success: ->
+          alert(data)
+    $('#thank-you-message').fadeIn()
+    $(@).hide()
+    false

@@ -96,6 +96,9 @@ body {
     z-index: 1;
     opacity: 1;
 }
+.black {
+    color: rgba(255,255,255,0.8);
+}
 .main-quote {
     position: relative;
     text-align: center;

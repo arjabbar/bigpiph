@@ -38,13 +38,33 @@
     window.setTimeout(function() {
       return $('body').css('opacity', 1).css('display', 'initial');
     }, 500);
-    return $('.inner-wrap').on('transitionend otransitionend webkitTransitionEnd oTransitionEnd', function(e) {
+    $('.inner-wrap').on('transitionend otransitionend webkitTransitionEnd oTransitionEnd', function(e) {
       if ($(e.target).hasClass('inner-wrap out')) {
         $('.newsletter-signup input').focus();
       }
       if ($(e.target).hasClass('inner-wrap')) {
         return $(e.target).toggleClass('out');
       }
+    });
+    $("#mc-embedded-subscribe-form").on('keydown', function(e) {
+      if (e.keyCode === 13) {
+        return $(this).submit();
+      }
+    });
+    return $("#mc-embedded-subscribe-form").submit(function() {
+      var url;
+      url = $(this).attr('action');
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: $(this).serialize(),
+        success: function() {
+          return alert(data);
+        }
+      });
+      $('#thank-you-message').fadeIn();
+      $(this).hide();
+      return false;
     });
   });
 

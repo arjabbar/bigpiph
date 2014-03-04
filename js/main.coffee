@@ -20,6 +20,9 @@ $(document).ready ->
 
   window.scrollToTop = $.smoothScroll.bind(window, scrollTarget: $('.front-page-container'))
 
+  $('.left-off-canvas-toggle').on 'click', (e) ->
+    $('.left-off-canvas-menu').show()
+
   $('.show-video-button').on 'click touchdown', (e) ->
     $.smoothScroll scrollTarget: $('.footer-container')
 
@@ -43,7 +46,9 @@ $(document).ready ->
   $('.inner-wrap').on 'transitionend otransitionend webkitTransitionEnd oTransitionEnd', (e) ->
     if $(e.target).hasClass('inner-wrap out')
       $('.newsletter-signup input').focus()
-    $(e.target).toggleClass('out') if $(e.target).hasClass('inner-wrap')
+      $('.left-off-canvas-menu').hide()
+    if $(e.target).hasClass('inner-wrap')
+      $(e.target).toggleClass('out')
 
   $("#mc-embedded-subscribe-form").on 'keydown', (e) ->
     if e.keyCode == 13

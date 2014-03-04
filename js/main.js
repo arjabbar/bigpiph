@@ -15,6 +15,9 @@
     window.scrollToTop = $.smoothScroll.bind(window, {
       scrollTarget: $('.front-page-container')
     });
+    $('.left-off-canvas-toggle').on('click', function(e) {
+      return $('.left-off-canvas-menu').show();
+    });
     $('.show-video-button').on('click touchdown', function(e) {
       return $.smoothScroll({
         scrollTarget: $('.footer-container')
@@ -41,6 +44,7 @@
     $('.inner-wrap').on('transitionend otransitionend webkitTransitionEnd oTransitionEnd', function(e) {
       if ($(e.target).hasClass('inner-wrap out')) {
         $('.newsletter-signup input').focus();
+        $('.left-off-canvas-menu').hide();
       }
       if ($(e.target).hasClass('inner-wrap')) {
         return $(e.target).toggleClass('out');

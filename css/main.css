@@ -96,6 +96,9 @@ body {
     z-index: 1;
     opacity: 1;
 }
+.footer-container > * {
+    background-color: black;
+}
 .black {
     color: rgba(255,255,255,0.8);
 }
@@ -307,6 +310,7 @@ body {
     transform: translateY(-50%) scale(1);
     width: 50px;
     height: 50px;
+    overflow: hidden;
     fill: rgb(230, 20, 20);
     -webkit-transition: all 1s;
     transition: all 250ms;
